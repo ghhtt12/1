@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{% block title %} Клиент  {{ client['name']  }} {% endblock %}</h2>
+<hr>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Позиция</th>
+            <th scope="col">Значение</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Имя</th>
+            <td>{{ client['name'] }} </th>
+        </tr>
+        <tr>
+            <td>Почта</th>
+            <td>{{  client['email'] }} </th>
+        </tr>
+        <tr>
+            <td>Номер телефона</th>
+            <td>{{  client['phone_number'] }} </th>
+        </tr>
+        <tr>
+            <td>Пасспорт</th>
+            <td>{{  client['passport'] }} </th>
+        </tr>
+    </tbody>
+</table>
+
+<div class="row">
+    <div class="col-auto">
+        <a href="/clients">
+            <button type="submit" class="btn btn-secondary"><i class="bi-people"></i> Перейти к клиенту</button>
+        </a>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{% block title %} Сотрудник  {{ employee['name'] }} {% endblock %}</h2>
+<hr>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Позиция</th>
+            <th scope="col">Значение</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Номер телефона</th>
+            <td>{{ employee['phone_number'] }} </th>
+        </tr>
+        <tr>
+            <td>Почта</th>
+            <td>{{ employee['email'] }} </th>
+        </tr>
+        <tr>
+            <td>Должность</th>
+            <td>{{ employee['position'] }} </th>
+        </tr>
+         <tr>
+            <td>Департамент</th>
+            <td>{{ employee['department'] }} </th>
+        </tr>
+    </tbody>
+</table>
+
+<div class="row">
+    <div class="col-auto">
+        <a href="/clients">
+            <button type="submit" class="btn btn-secondary"><i class="bi-people"></i> Перейти к клиенту</button>
+        </a>
+    </div>
+    <div class="col-auto">
+        <form method="POST">
+            <button type="submit" class="btn btn-primary"><i class="bi-printer"></i> Скачать договор</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{% block title %} Текущие тренировки {% endblock %}</h1>
+
+<div class="container mt-5 mb-3">
+    <div class="row">
+        {% for training in trainings %}
+        <div class="col-md-4">
+            <div class="card p-3 mb-2 border-primary">
+                <div class="card-header">
+                    <a href="{{ url_for('training', training_id=training['id_training']) }}">>
+                        <b>тренировка {{ training['employee_id'] }}</b>
+                    </a>
+                    <br>
+                    <span class="badge bg-warning">{{ training['employee_id'] }}</span>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ training['duration'] }}
+                    </h5>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

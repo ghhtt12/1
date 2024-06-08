@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{% block title %} Тренеровка {{ training['description']  }} {% endblock %}</h2>
+<hr>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Позиция</th>
+            <th scope="col">Значение</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Длительность</th>
+            <td>{{ training['duration'] }} ч</th>
+        </tr>
+        <tr>
+            <td>Тренер</th>
+            <td>{{ training['employee_id'] }} </th>
+        </tr>
+        <tr>
+            <td>Количество</th>
+            <td>{{ training['amount'] }} </th>
+        </tr>
+        <tr>
+            <td>Пояснение</th>
+            <td>{{ training['description'] }} </th>
+        </tr>
+        <tr>
+            <td>Клиент</th>
+            <td>{{ training['client_id'] }}</th>
+        </tr>
+    </tbody>
+</table>
+
+<div class="row">
+    <div class="col-auto">
+        <a href="/clients">
+            <button type="submit" class="btn btn-secondary"><i class="bi-people"></i> Перейти к клиенту</button>
+        </a>
+    </div>
+</div>
+
+{% endblock %}
